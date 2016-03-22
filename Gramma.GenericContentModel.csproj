@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{79D2D4C7-C8DE-4F11-93ED-AA4E4D2FC974}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gramma.GenericContentModel</RootNamespace>
+    <AssemblyName>Gramma.GenericContentModel</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET_45_OR_GREATER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Gramma.GenericContentModel.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NET_45_OR_GREATER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Gramma.GenericContentModel.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DebuggerProxies\BagDebuggerProxy.cs" />
+    <Compile Include="DebuggerProxies\MapDebuggerProxy.cs" />
+    <Compile Include="DebuggerProxies\MultiDictionaryDebuggerProxy.cs" />
+    <Compile Include="DebuggerProxies\SequenceDebuggerProxy.cs" />
+    <Compile Include="IInitializable.cs" />
+    <Compile Include="IMultiMap.cs" />
+    <Compile Include="IOrderedKeyedReadOnlyChildren.cs" />
+    <Compile Include="MultiMap.cs" />
+    <Compile Include="OrderedKeyedReadOnlyChildren.cs" />
+    <Compile Include="ReadOnlyBiGramSet.cs" />
+    <Compile Include="Child.cs" />
+    <Compile Include="Children.cs" />
+    <Compile Include="EquatableReadOnlySequence.cs" />
+    <Compile Include="IChildren.cs" />
+    <Compile Include="IKeyedChildren.cs" />
+    <Compile Include="IKeyedElement.cs" />
+    <Compile Include="IMap.cs" />
+    <Compile Include="IMultiDictionary.cs" />
+    <Compile Include="IOwnedObject.cs" />
+    <Compile Include="IReadOnlyBag.cs" />
+    <Compile Include="IReadOnlyBiGramSet.cs" />
+    <Compile Include="IReadOnlyChildren.cs" />
+    <Compile Include="IReadOnlyKeyValuePair.cs" />
+    <Compile Include="IReadOnlyMap.cs" />
+    <Compile Include="IReadOnlyMultiDictionary.cs" />
+    <Compile Include="IReadOnlyMultiMap.cs" />
+    <Compile Include="IReadOnlySequence.cs" />
+    <Compile Include="KeyedChild.cs" />
+    <Compile Include="IChild.cs" />
+    <Compile Include="IKeyedChild.cs" />
+    <Compile Include="IKeyedReadOnlyChildren.cs" />
+    <Compile Include="KeyedChildren.cs" />
+    <Compile Include="KeyedReadOnlyChildren.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="MultiDictionary.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadOnlyBag.cs" />
+    <Compile Include="ReadOnlyChildren.cs" />
+    <Compile Include="ReadOnlyKeyValuePair.cs" />
+    <Compile Include="ReadOnlyMap.cs" />
+    <Compile Include="ReadOnlyMultiDictionary.cs" />
+    <Compile Include="ReadOnlyMultiMap.cs" />
+    <Compile Include="ReadOnlySequence.cs" />
+    <Compile Include="RelationshipBuilder.cs" />
+    <Compile Include="Xaml\ReadOnlyXamlMember.cs" />
+    <Compile Include="Xaml\ReadOnlyXamlSchemaContext.cs" />
+    <Compile Include="Xaml\ReadOnlyXamlType.cs" />
+    <Compile Include="Xaml\ReadOnlyXamlTypeInvoker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Collection interfaces.cd" />
+    <None Include="Element interfaces.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
