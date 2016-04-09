@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Gramma.GenericContentModel
+namespace Grammophone.GenericContentModel
 {
 	/// <summary>
 	/// A dictionary of items associated with keys, allowing for 

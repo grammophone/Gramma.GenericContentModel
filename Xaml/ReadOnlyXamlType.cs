@@ -6,7 +6,7 @@ using System.Xaml;
 using System.Xaml.Schema;
 using System.Reflection;
 
-namespace Gramma.GenericContentModel.Xaml
+namespace Grammophone.GenericContentModel.Xaml
 {
 	public class ReadOnlyXamlType : XamlType
 	{

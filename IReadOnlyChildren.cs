@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Gramma.GenericContentModel
+namespace Grammophone.GenericContentModel
 {
 	/// <summary>
 	/// An immmutable collection of 'child' objects belonging to a 'parent'.

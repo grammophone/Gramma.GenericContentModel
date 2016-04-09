@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace Gramma.GenericContentModel
+namespace Grammophone.GenericContentModel
 {
 	/// <summary>
 	/// An implementation of <see cref="IReadOnlyMultiMap{K, E}"/>,

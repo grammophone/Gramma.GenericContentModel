@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Gramma.GenericContentModel
+namespace Grammophone.GenericContentModel
 {
 	/// <summary>
 	/// Marks an instance belonging to an instance of type <typeparamref name="P"/>.

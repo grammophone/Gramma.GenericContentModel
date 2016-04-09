@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Gramma.GenericContentModel.DebuggerProxies
+namespace Grammophone.GenericContentModel.DebuggerProxies
 {
 	/// <summary>
 	/// A read-only dictionary of items associated with keys, allowing for 

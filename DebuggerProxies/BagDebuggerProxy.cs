@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Gramma.GenericContentModel.DebuggerProxies
+namespace Grammophone.GenericContentModel.DebuggerProxies
 {
 	/// <summary>
 	/// Used to to provide friendly debug information of <see cref="IReadOnlyBag{T}"/>

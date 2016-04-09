@@ -5,7 +5,7 @@ using System.Text;
 using System.Xaml.Schema;
 using System.Reflection;
 
-namespace Gramma.GenericContentModel.Xaml
+namespace Grammophone.GenericContentModel.Xaml
 {
 	/// <summary>
 	/// Adds an element to a collection using its private/protected/internal method "AddItem".

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Markup;
 
-namespace Gramma.GenericContentModel
+namespace Grammophone.GenericContentModel
 {
 	/// <summary>
 	/// An implementation of <see cref="IKeyedReadOnlyChildren{P, C, K}"/>,

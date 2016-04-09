@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xaml;
 
-namespace Gramma.GenericContentModel.Xaml
+namespace Grammophone.GenericContentModel.Xaml
 {
 	public class ReadOnlyXamlSchemaContext : XamlSchemaContext
 	{
