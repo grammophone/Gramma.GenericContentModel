@@ -53,6 +53,8 @@
     <Compile Include="DebuggerProxies\MapDebuggerProxy.cs" />
     <Compile Include="DebuggerProxies\MultiDictionaryDebuggerProxy.cs" />
     <Compile Include="DebuggerProxies\SequenceDebuggerProxy.cs" />
+    <Compile Include="EquatableReadOnlyBag.cs" />
+    <Compile Include="IEquatableReadOnlyBag.cs" />
     <Compile Include="IInitializable.cs" />
     <Compile Include="IMultiMap.cs" />
     <Compile Include="IOrderedKeyedReadOnlyChildren.cs" />
