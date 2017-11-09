@@ -1,90 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Interface Name="Gramma.GenericContentModel.IReadOnlySequence&lt;T&gt;" Collapsed="true">
+  <Interface Name="Grammophone.GenericContentModel.IReadOnlySequence&lt;T&gt;" Collapsed="true">
     <Position X="3.5" Y="2" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>IReadOnlySequence.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Gramma.GenericContentModel.IChildren&lt;P, C&gt;" Collapsed="true">
+  <Interface Name="Grammophone.GenericContentModel.IChildren&lt;P, C&gt;" Collapsed="true">
     <Position X="0.5" Y="5.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>IChildren.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Gramma.GenericContentModel.IKeyedChildren&lt;P, K, C&gt;" Collapsed="true">
+  <Interface Name="Grammophone.GenericContentModel.IKeyedChildren&lt;P, K, C&gt;" Collapsed="true">
     <Position X="0.5" Y="6.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IKeyedChildren.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Gramma.GenericContentModel.IKeyedReadOnlyChildren&lt;P, K, C&gt;" Collapsed="true">
+  <Interface Name="Grammophone.GenericContentModel.IKeyedReadOnlyChildren&lt;P, K, C&gt;" Collapsed="true">
     <Position X="2" Y="4.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IKeyedReadOnlyChildren.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Gramma.GenericContentModel.IMap&lt;K, E&gt;" Collapsed="true">
+  <Interface Name="Grammophone.GenericContentModel.IMap&lt;K, E&gt;" Collapsed="true">
     <Position X="4.75" Y="4.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAQAAAAAAAAEBAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>IMap.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Gramma.GenericContentModel.IMultiDictionary&lt;K, E, C&gt;" Collapsed="true">
+  <Interface Name="Grammophone.GenericContentModel.IMultiDictionary&lt;K, E, C&gt;" Collapsed="true">
     <Position X="5.5" Y="7.75" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>IMultiDictionary.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Gramma.GenericContentModel.IOrderedKeyedReadOnlyChildren&lt;P, K, C&gt;" Collapsed="true">
+  <Interface Name="Grammophone.GenericContentModel.IOrderedKeyedReadOnlyChildren&lt;P, K, C&gt;" Collapsed="true">
     <Position X="3" Y="6.75" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>IOrderedKeyedReadOnlyChildren.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Gramma.GenericContentModel.IReadOnlyBag&lt;T&gt;" Collapsed="true">
+  <Interface Name="Grammophone.GenericContentModel.IReadOnlyBag&lt;T&gt;" Collapsed="true">
     <Position X="4.75" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IReadOnlyBag.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Gramma.GenericContentModel.IReadOnlyBiGramSet&lt;F, S&gt;" Collapsed="true">
+  <Interface Name="Grammophone.GenericContentModel.IReadOnlyBiGramSet&lt;F, S&gt;" Collapsed="true">
     <Position X="6" Y="2" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQgAAQAAA=</HashCode>
       <FileName>IReadOnlyBiGramSet.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Gramma.GenericContentModel.IReadOnlyChildren&lt;P, C&gt;" Collapsed="true">
+  <Interface Name="Grammophone.GenericContentModel.IReadOnlyChildren&lt;P, C&gt;" Collapsed="true">
     <Position X="0.5" Y="2" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IReadOnlyChildren.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Gramma.GenericContentModel.IReadOnlyMap&lt;K, E&gt;" Collapsed="true">
+  <Interface Name="Grammophone.GenericContentModel.IReadOnlyMap&lt;K, E&gt;" Collapsed="true">
     <Position X="4.75" Y="3" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IReadOnlyMap.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Gramma.GenericContentModel.IReadOnlyMultiDictionary&lt;K, E, C&gt;" Collapsed="true">
+  <Interface Name="Grammophone.GenericContentModel.IReadOnlyMultiDictionary&lt;K, E, C&gt;" Collapsed="true">
     <Position X="5.5" Y="5.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAACAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IReadOnlyMultiDictionary.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Gramma.GenericContentModel.IReadOnlyMultiMap&lt;K, E&gt;" Collapsed="true">
+  <Interface Name="Grammophone.GenericContentModel.IReadOnlyMultiMap&lt;K, E&gt;" Collapsed="true">
     <Position X="2" Y="3" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
