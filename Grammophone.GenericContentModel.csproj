@@ -103,6 +103,12 @@
   <ItemGroup>
     <None Include="Collection interfaces.cd" />
     <None Include="Element interfaces.cd" />
+    <None Include="LICENSE.md" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\GenericContentModel elements.png" />
+    <Content Include="Images\GenericContentModel interfaces.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
