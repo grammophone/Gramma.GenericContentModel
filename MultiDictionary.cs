@@ -30,6 +30,16 @@ namespace Grammophone.GenericContentModel
 		}
 
 		/// <summary>
+		/// Create an emty dictionary with an initial capacity of keys.
+		/// </summary>
+		/// <param name="keysCapacity">The expected number of keys.</param>
+		public MultiDictionary(int keysCapacity)
+			: base(keysCapacity)
+		{
+
+		}
+
+		/// <summary>
 		/// Create from key-value pairs.
 		/// </summary>
 		public MultiDictionary(IEnumerable<IReadOnlyKeyValuePair<K, E>> keyValuePairs)
@@ -164,6 +174,16 @@ namespace Grammophone.GenericContentModel
 		/// Create empty dictionary.
 		/// </summary>
 		public MultiDictionary()
+		{
+
+		}
+
+		/// <summary>
+		/// Create an emty dictionary with an initial capacity of keys.
+		/// </summary>
+		/// <param name="keysCapacity">The expected number of keys.</param>
+		public MultiDictionary(int keysCapacity)
+			: base(keysCapacity)
 		{
 
 		}

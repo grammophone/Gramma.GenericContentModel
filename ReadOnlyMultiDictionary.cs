@@ -24,7 +24,7 @@ namespace Grammophone.GenericContentModel
 	{
 		#region Protected fields
 
-		protected Dictionary<K, CI> itemsDictionary;
+		protected readonly Dictionary<K, CI> itemsDictionary;
 
 		protected int count;
 
@@ -40,6 +40,16 @@ namespace Grammophone.GenericContentModel
 		public ReadOnlyMultiDictionary()
 		{
 			this.itemsDictionary = new Dictionary<K, CI>();
+			this.count = 0;
+		}
+
+		/// <summary>
+		/// Create an emty dictionary with an initial capacity of keys.
+		/// </summary>
+		/// <param name="keysCapacity">The expected number of keys.</param>
+		public ReadOnlyMultiDictionary(int keysCapacity)
+		{
+			this.itemsDictionary = new Dictionary<K, CI>(keysCapacity);
 			this.count = 0;
 		}
 
@@ -61,7 +71,7 @@ namespace Grammophone.GenericContentModel
 		/// Create from key-collection pairs.
 		/// </summary>
 		public ReadOnlyMultiDictionary(IEnumerable<IReadOnlyKeyValuePair<K, C>> keyCollectionPairs)
-			: this()
+			: this(keyCollectionPairs.Count())
 		{
 			if (keyCollectionPairs == null) throw new ArgumentNullException("keyCollectionPairs");
 
@@ -109,7 +119,7 @@ namespace Grammophone.GenericContentModel
 			if (keyMapper == null) throw new ArgumentNullException("keyMapper");
 			if (elementsMapper == null) throw new ArgumentNullException("elementsMapper");
 
-			var dictionary = new ReadOnlyMultiDictionary<K, E, C, CI>();
+			var dictionary = new ReadOnlyMultiDictionary<K, E, C, CI>(sourceCollection.Count());
 
 			foreach (var entry in sourceCollection)
 			{
@@ -294,6 +304,16 @@ namespace Grammophone.GenericContentModel
 		}
 
 		/// <summary>
+		/// Create an emty dictionary with an initial capacity of keys.
+		/// </summary>
+		/// <param name="keysCapacity">The expected number of keys.</param>
+		public ReadOnlyMultiDictionary(int keysCapacity)
+			: base(keysCapacity)
+		{
+
+		}
+
+		/// <summary>
 		/// Create from key-value pairs.
 		/// </summary>
 		public ReadOnlyMultiDictionary(IEnumerable<IReadOnlyKeyValuePair<K, E>> keyValuePairs)
@@ -340,6 +360,16 @@ namespace Grammophone.GenericContentModel
 		/// </summary>
 		public ReadOnlyMultiDictionary()
 		{
+		}
+
+		/// <summary>
+		/// Create an emty dictionary with an initial capacity of keys.
+		/// </summary>
+		/// <param name="keysCapacity">The expected number of keys.</param>
+		public ReadOnlyMultiDictionary(int keysCapacity)
+			: base(keysCapacity)
+		{
+
 		}
 
 		/// <summary>
