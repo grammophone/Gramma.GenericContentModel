@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContainerExtensions.cs" />
     <Compile Include="DebuggerProxies\BagDebuggerProxy.cs" />
     <Compile Include="DebuggerProxies\MapDebuggerProxy.cs" />
     <Compile Include="DebuggerProxies\MultiDictionaryDebuggerProxy.cs" />

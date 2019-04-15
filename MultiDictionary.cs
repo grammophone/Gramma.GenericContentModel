@@ -58,6 +58,66 @@ namespace Grammophone.GenericContentModel
 
 		}
 
+		/// <summary>
+		/// Create multi-dictionary from a "master-detail" collection whose entries are 
+		/// objects having a key and the corresponding values.
+		/// </summary>
+		/// <typeparam name="T">The type of the entries in the "master-detail" collection.</typeparam>
+		/// <param name="sourceCollection">The "master-detail" collection.</param>
+		/// <param name="keyMapper">Maps an entry in the <paramref name="sourceCollection"/> to its key.</param>
+		/// <param name="elementsMapper">Maps an entry in the <paramref name="sourceCollection"/> to its values.</param>
+		/// <returns>Returns the dictionary.</returns>
+		public static new MultiDictionary<K, E, C, CI> CreateByMasterDetailCollection<T>(
+			IEnumerable<T> sourceCollection,
+			Func<T, K> keyMapper,
+			Func<T, IEnumerable<E>> elementsMapper)
+		{
+			if (sourceCollection == null) throw new ArgumentNullException("sourceCollection");
+			if (keyMapper == null) throw new ArgumentNullException("keyMapper");
+			if (elementsMapper == null) throw new ArgumentNullException("elementsMapper");
+
+			var dictionary = new MultiDictionary<K, E, C, CI>();
+
+			foreach (var entry in sourceCollection)
+			{
+				var key = keyMapper(entry);
+
+				foreach (var element in elementsMapper(entry))
+				{
+					dictionary.AddItem(key, element);
+				}
+			}
+
+			return dictionary;
+		}
+
+		/// <summary>
+		/// Create using a source collection and functions to map keys and values from items of the source collection.
+		/// </summary>
+		/// <typeparam name="I">The type of items in the sourcecollection.</typeparam>
+		/// <param name="sourceCollection">The source collection.</param>
+		/// <param name="keyMapper">Function to get a key from an item in the <paramref name="sourceCollection"/>.</param>
+		/// <param name="valueMapper">Function to get a value from an item in the <paramref name="sourceCollection"/>.</param>
+		/// <returns>Returns the dictionary.</returns>
+		public static new MultiDictionary<K, E, C, CI> Create<I>(
+			IEnumerable<I> sourceCollection,
+			Func<I, K> keyMapper,
+			Func<I, E> valueMapper)
+		{
+			if (sourceCollection == null) throw new ArgumentNullException(nameof(sourceCollection));
+			if (keyMapper == null) throw new ArgumentNullException(nameof(keyMapper));
+			if (valueMapper == null) throw new ArgumentNullException(nameof(valueMapper));
+
+			var dictionary = new MultiDictionary<K, E, C, CI>();
+
+			foreach (var item in sourceCollection)
+			{
+				dictionary.AddItem(keyMapper(item), valueMapper(item));
+			}
+
+			return dictionary;
+		}
+
 		#endregion
 
 		#region IMultiDictionary<K,E> Members
@@ -135,6 +195,66 @@ namespace Grammophone.GenericContentModel
 			: base(items, keyMapper)
 		{
 
+		}
+
+		/// <summary>
+		/// Create multi-dictionary from a "master-detail" collection whose entries are 
+		/// objects having a key and the corresponding values.
+		/// </summary>
+		/// <typeparam name="T">The type of the entries in the "master-detail" collection.</typeparam>
+		/// <param name="sourceCollection">The "master-detail" collection.</param>
+		/// <param name="keyMapper">Maps an entry in the <paramref name="sourceCollection"/> to its key.</param>
+		/// <param name="elementsMapper">Maps an entry in the <paramref name="sourceCollection"/> to its values.</param>
+		/// <returns>Returns the dictionary.</returns>
+		public static new MultiDictionary<K, E> CreateByMasterDetailCollection<T>(
+			IEnumerable<T> sourceCollection,
+			Func<T, K> keyMapper,
+			Func<T, IEnumerable<E>> elementsMapper)
+		{
+			if (sourceCollection == null) throw new ArgumentNullException("sourceCollection");
+			if (keyMapper == null) throw new ArgumentNullException("keyMapper");
+			if (elementsMapper == null) throw new ArgumentNullException("elementsMapper");
+
+			var dictionary = new MultiDictionary<K, E>();
+
+			foreach (var entry in sourceCollection)
+			{
+				var key = keyMapper(entry);
+
+				foreach (var element in elementsMapper(entry))
+				{
+					dictionary.AddItem(key, element);
+				}
+			}
+
+			return dictionary;
+		}
+
+		/// <summary>
+		/// Create using a source collection and functions to map keys and values from items of the source collection.
+		/// </summary>
+		/// <typeparam name="I">The type of items in the sourcecollection.</typeparam>
+		/// <param name="sourceCollection">The source collection.</param>
+		/// <param name="keyMapper">Function to get a key from an item in the <paramref name="sourceCollection"/>.</param>
+		/// <param name="valueMapper">Function to get a value from an item in the <paramref name="sourceCollection"/>.</param>
+		/// <returns>Returns the dictionary.</returns>
+		public static new MultiDictionary<K, E> Create<I>(
+			IEnumerable<I> sourceCollection,
+			Func<I, K> keyMapper,
+			Func<I, E> valueMapper)
+		{
+			if (sourceCollection == null) throw new ArgumentNullException(nameof(sourceCollection));
+			if (keyMapper == null) throw new ArgumentNullException(nameof(keyMapper));
+			if (valueMapper == null) throw new ArgumentNullException(nameof(valueMapper));
+
+			var dictionary = new MultiDictionary<K, E>();
+
+			foreach (var item in sourceCollection)
+			{
+				dictionary.AddItem(keyMapper(item), valueMapper(item));
+			}
+
+			return dictionary;
 		}
 
 		#endregion
