@@ -102,6 +102,49 @@ namespace Grammophone.GenericContentModel
 		}
 
 		/// <summary>
+		/// Create a <see cref="MultiDictionary{K, E, C, CI}"/> from a collection of items of type <typeparamref name="E"/>.
+		/// The order of items under a key preserves the order of values in the source collection.
+		/// The multiple values are stored in instances of <see cref="IReadOnlySequence{T}"/> implemented by <see cref="ReadOnlySequence{T}"/>.
+		/// </summary>
+		/// <typeparam name="K">The type of the keys of the dictionary.</typeparam>
+		/// <typeparam name="E">The type of elements in the source collection and the items stored in the dictionary.</typeparam>
+		/// <param name="sourceCollection">The source collection.</param>
+		/// <param name="keyMapper">Function to specify a dictionary key from an item of the collection.</param>
+		/// <returns>
+		/// Returns a <see cref="MultiDictionary{K, E, C, CI}"/> whose multiple values are stored in
+		/// in instances of <see cref="IReadOnlySequence{T}"/> implemented by <see cref="ReadOnlySequence{T}"/>.
+		/// </returns>
+		public static MultiDictionary<K, E, IReadOnlySequence<E>, ReadOnlySequence<E>> ToSequentialMultiDictionary<K, E>(
+			this IEnumerable<E> sourceCollection,
+			Func<E, K> keyMapper)
+		{
+			return ToSequentialMultiDictionary(sourceCollection, keyMapper, e => e);
+		}
+
+		/// <summary>
+		/// Create a <see cref="MultiDictionary{K, E, C, CI}"/> from a collection of items of type <typeparamref name="E"/>.
+		/// The order of items under a key preserves the order of values in the source collection.
+		/// The multiple values are stored in instances of <see cref="IReadOnlySequence{T}"/> implemented by <see cref="ReadOnlySequence{T}"/>.
+		/// </summary>
+		/// <typeparam name="K">The type of the keys of the dictionary.</typeparam>
+		/// <typeparam name="E">The type of elements stored in the dictionary.</typeparam>
+		/// <typeparam name="I">The type of items in the source collection.</typeparam>
+		/// <param name="sourceCollection">The source collection.</param>
+		/// <param name="keyMapper">Function to specify a dictionary key from an item of the collection.</param>
+		/// <param name="valueMapper">Function to specify a value from an item of the collection.</param>
+		/// <returns>
+		/// Returns a <see cref="MultiDictionary{K, E, C, CI}"/> whose multiple values are stored in
+		/// in instances of <see cref="IReadOnlySequence{T}"/> implemented by <see cref="ReadOnlySequence{T}"/>.
+		/// </returns>
+		public static MultiDictionary<K, E, IReadOnlySequence<E>, ReadOnlySequence<E>> ToSequentialMultiDictionary<K, E, I>(
+			this IEnumerable<I> sourceCollection,
+			Func<I, K> keyMapper,
+			Func<I, E> valueMapper)
+		{
+			return MultiDictionary<K, E, IReadOnlySequence<E>, ReadOnlySequence<E>>.Create(sourceCollection, keyMapper, valueMapper);
+		}
+
+		/// <summary>
 		/// Create a <see cref="ReadOnlyMultiDictionary{K, E}"/> from a collection of items of type <typeparamref name="E"/>.
 		/// The multiple values are stored in instances of <see cref="ReadOnlyBag{E}"/>.
 		/// </summary>
@@ -189,6 +232,48 @@ namespace Grammophone.GenericContentModel
 		where CI : C, IInitializable<E>, new()
 		{
 			return ReadOnlyMultiDictionary<K, E, C, CI>.Create(sourceCollection, keyMapper, valueMapper);
+		}
+
+		/// <summary>
+		/// Create a <see cref="ReadOnlyMultiDictionary{K, E, C, CI}"/> from a collection of items of type <typeparamref name="E"/>.
+		/// The multiple values are stored in instances of <see cref="IReadOnlySequence{T}"/> implemented by <see cref="ReadOnlySequence{T}"/>.
+		/// </summary>
+		/// <typeparam name="K">The type of the keys of the dictionary.</typeparam>
+		/// <typeparam name="E">The type of elements in the source collection and the items stored in the dictionary.</typeparam>
+		/// <param name="sourceCollection">The source collection.</param>
+		/// <param name="keyMapper">Function to specify a dictionary key from an item of the collection.</param>
+		/// <returns>
+		/// Returns a <see cref="ReadOnlyMultiDictionary{K, E, C, CI}"/> whose multiple values are stored in
+		/// in instances of <see cref="IReadOnlySequence{T}"/> implemented by <see cref="ReadOnlySequence{T}"/>.
+		/// </returns>
+		public static ReadOnlyMultiDictionary<K, E, IReadOnlySequence<E>, ReadOnlySequence<E>> ToSequentialReadOnlyMultiDictionary<K, E>(
+			this IEnumerable<E> sourceCollection,
+			Func<E, K> keyMapper)
+		{
+			return ToSequentialReadOnlyMultiDictionary(sourceCollection, keyMapper, e => e);
+		}
+
+		/// <summary>
+		/// Create a read-only multi-dictionary from a collection of items of type <typeparamref name="E"/>.
+		/// The order of items under a key preserves the order of values in the source collection.
+		/// The multiple values are stored in instances of <see cref="IReadOnlySequence{T}"/> implemented by <see cref="ReadOnlySequence{T}"/>.
+		/// </summary>
+		/// <typeparam name="K">The type of the keys of the dictionary.</typeparam>
+		/// <typeparam name="E">The type of elements stored in the dictionary.</typeparam>
+		/// <typeparam name="I">The type of items in the source collection.</typeparam>
+		/// <param name="sourceCollection">The source collection.</param>
+		/// <param name="keyMapper">Function to specify a dictionary key from an item of the collection.</param>
+		/// <param name="valueMapper">Function to specify a value from an item of the collection.</param>
+		/// <returns>
+		/// Returns a <see cref="ReadOnlyMultiDictionary{K, E, C, CI}"/> whose multiple values are stored in
+		/// in instances of <see cref="IReadOnlySequence{T}"/> implemented by <see cref="ReadOnlySequence{T}"/>.
+		/// </returns>
+		public static ReadOnlyMultiDictionary<K, E, IReadOnlySequence<E>, ReadOnlySequence<E>> ToSequentialReadOnlyMultiDictionary<K, E, I>(
+			this IEnumerable<I> sourceCollection,
+			Func<I, K> keyMapper,
+			Func<I, E> valueMapper)
+		{
+			return ReadOnlyMultiDictionary<K, E, IReadOnlySequence<E>, ReadOnlySequence<E>>.Create(sourceCollection, keyMapper, valueMapper);
 		}
 	}
 }
