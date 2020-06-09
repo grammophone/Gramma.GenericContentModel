@@ -31,6 +31,9 @@ namespace Grammophone.GenericContentModel
 
 		#region IKeyedChild<P,K> Members
 
+		/// <summary>
+		/// The key of the child item.
+		/// </summary>
 		public K Key
 		{
 			get;

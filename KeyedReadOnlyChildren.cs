@@ -61,6 +61,9 @@ namespace Grammophone.GenericContentModel
 
 		#region IReadOnlyChildren<P,C> Members
 
+		/// <summary>
+		/// The owner of the collection of children.
+		/// </summary>
 		public P Owner
 		{
 			get { return this.owner; }

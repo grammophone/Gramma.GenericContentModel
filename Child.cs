@@ -15,6 +15,9 @@ namespace Grammophone.GenericContentModel
 	{
 		#region IChild<P> Members
 
+		/// <summary>
+		/// The object's parent.
+		/// </summary>
 		public P Parent
 		{
 			get;

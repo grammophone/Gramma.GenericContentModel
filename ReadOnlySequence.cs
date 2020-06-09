@@ -107,6 +107,9 @@ namespace Grammophone.GenericContentModel
 
 		#region IReadOnlyBag<T> Members
 
+		/// <summary>
+		/// The number of items in the collection.
+		/// </summary>
 		public int Count
 		{
 			get { return list.Count; }

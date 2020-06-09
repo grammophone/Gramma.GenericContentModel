@@ -60,6 +60,10 @@ namespace Grammophone.GenericContentModel
 
 		#region IEquatable<EquatableReadOnlySequence<T>> Members
 
+		/// <summary>
+		/// Returns true if this sequence is equal to an <paramref name="other"/> sequence item-by-item.
+		/// </summary>
+		/// <param name="other">The other sequence.</param>
 		public bool Equals(EquatableReadOnlySequence<T> other)
 		{
 			if (other == null) return false;
@@ -80,14 +84,21 @@ namespace Grammophone.GenericContentModel
 
 		#region Public methods
 
+		/// <summary>
+		/// Calculate a hash code based on the items in the sequence.
+		/// </summary>
 		public override int GetHashCode()
 		{
 			return hashCode;
 		}
 
-		public override bool Equals(object other)
+		/// <summary>
+		/// If the <paramref name="otherObject"/> is a sequence, returns true if this sequence is equal to the other sequence item-by-item.
+		/// </summary>
+		/// <param name="otherObject">The other sequence.</param>
+		public override bool Equals(object otherObject)
 		{
-			return this.Equals(other as EquatableReadOnlySequence<T>);
+			return this.Equals(otherObject as EquatableReadOnlySequence<T>);
 		}
 
 		#endregion

@@ -33,11 +33,20 @@ namespace Grammophone.GenericContentModel
 
 		#region IChildren<P,C> Members
 
+		/// <summary>
+		/// Add a child item to the collection.
+		/// </summary>
+		/// <param name="child">The child item to add.</param>
+		/// <returns>Returns whether the item already exists in the collection.</returns>
 		public bool Add(C child)
 		{
 			return AddItem(child);
 		}
 
+		/// <summary>
+		/// Add a collection of child items in te collection.
+		/// </summary>
+		/// <param name="children">The child items to add.</param>
 		public void AddAll(IEnumerable<C> children)
 		{
 			if (children == null) throw new ArgumentNullException("children");
@@ -48,6 +57,11 @@ namespace Grammophone.GenericContentModel
 			}
 		}
 
+		/// <summary>
+		/// Remove a child item.
+		/// </summary>
+		/// <param name="child">The child item to remove.</param>
+		/// <returns>Returns true if the child item was a member of the collection and removed, else false.</returns>
 		public bool Remove(C child)
 		{
 			if (this.collection.Contains(child))
@@ -62,6 +76,9 @@ namespace Grammophone.GenericContentModel
 			}
 		}
 
+		/// <summary>
+		/// Clear all child items in this collection.
+		/// </summary>
 		public void Clear()
 		{
 			foreach (var child in this.collection)

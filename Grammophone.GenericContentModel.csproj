@@ -19,10 +19,6 @@
     <DefineConstants>TRACE;NET_45_OR_GREATER</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="System.Xaml" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Collection interfaces.cd" />
     <None Include="Element interfaces.cd" />
     <None Include="LICENSE.md" />

@@ -74,6 +74,17 @@ namespace Grammophone.GenericContentModel
 
 		#region IReadOnlyMultiMap<K,E> Members
 
+		/// <summary>
+		/// Get the elements having the specified <paramref name="key"/>.
+		/// </summary>
+		/// <param name="key">The key to search for.</param>
+		/// <returns>
+		/// Returns a read-only collection of the elements having the specified <paramref name="key"/>.
+		/// If no item exists under the given key, returns an empty collection.
+		/// </returns>
+		/// <exception cref="ArgumentNullException">
+		/// The <paramref name="key"/> was null.
+		/// </exception>
 		public IReadOnlyBag<E> this[K key]
 		{
 			get
@@ -87,6 +98,18 @@ namespace Grammophone.GenericContentModel
 			}
 		}
 
+		/// <summary>
+		/// Check if the collection contains an element having the
+		/// given <paramref name="key"/>.
+		/// </summary>
+		/// <param name="key">The key of the element.</param>
+		/// <returns>
+		/// Returns true if an element having the supplied <paramref name="key"/> exists
+		/// in the collection.
+		/// </returns>
+		/// <exception cref="ArgumentNullException">
+		/// The <paramref name="key"/> was null.
+		/// </exception>
 		public bool ContainsKey(K key)
 		{
 			return map.ContainsKey(key);
@@ -96,6 +119,9 @@ namespace Grammophone.GenericContentModel
 
 		#region IReadOnlyBag<E> Members
 
+		/// <summary>
+		/// The number of items in the collection.
+		/// </summary>
 		public int Count
 		{
 			get { return count; }

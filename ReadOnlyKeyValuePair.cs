@@ -41,11 +41,17 @@ namespace Grammophone.GenericContentModel
 
 		#region IReadOnlyKeyValuePair<K,V> Members
 
+		/// <summary>
+		/// The key of the entry.
+		/// </summary>
 		public K Key
 		{
 			get { return key; }
 		}
 
+		/// <summary>
+		/// The value of the entry.
+		/// </summary>
 		public V Value
 		{
 			get { return value; }
@@ -55,6 +61,11 @@ namespace Grammophone.GenericContentModel
 
 		#region IEquatable<ReadOnlyKeyValuePair<K,V>> Members
 
+		/// <summary>
+		/// Returns true if the <see cref="Key"/> and the <see cref="Value"/>
+		/// to the respective key and value of an <paramref name="other"/> entry.
+		/// </summary>
+		/// <param name="other">The other entry.</param>
 		public bool Equals(ReadOnlyKeyValuePair<K, V> other)
 		{
 			if (other == null) return false;
@@ -66,11 +77,19 @@ namespace Grammophone.GenericContentModel
 
 		#region Public methods
 
-		public override bool Equals(object obj)
+		/// <summary>
+		/// Returns true if the <paramref name="otherObject"/> is a <see cref="ReadOnlyKeyValuePair{K, V}"/>
+		/// and the <see cref="Key"/> and the <see cref="Value"/> are equal to the
+		/// to the respective key and value of an other entry.
+		/// </summary>
+		public override bool Equals(object otherObject)
 		{
-			return this.Equals(obj as ReadOnlyKeyValuePair<K, V>);
+			return this.Equals(otherObject as ReadOnlyKeyValuePair<K, V>);
 		}
 
+		/// <summary>
+		/// Calculate a hash code based on the <see cref="Key"/> and the <see cref="Value"/> properties.
+		/// </summary>
 		public override int GetHashCode()
 		{
 			return this.Key.GetHashCode() + 23 * this.Value.GetHashCode();

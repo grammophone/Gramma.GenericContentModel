@@ -55,7 +55,7 @@ namespace Grammophone.GenericContentModel
 		#region Public methods
 
 		/// <summary>
-		/// Retus true of the set of items is equal to
+		/// Returns true if the set of items is equal to
 		/// the set in the <paramref name="other"/> collection.
 		/// </summary>
 		public bool Equals(IEquatableReadOnlyBag<T> other)
@@ -118,7 +118,11 @@ namespace Grammophone.GenericContentModel
 
 		#region Internal methods
 
-		// Only allow non-null elements to be added.
+		/// <summary>
+		/// Called when an item is added to the collection. Only allow non-null elements to be added.
+		/// </summary>
+		/// <param name="element">The added element.</param>
+		/// <returns>Returns true if the element was not already in the collection and added successfully, else false.</returns>
 		protected internal override bool AddItem(T element)
 		{
 			if (element == null) throw new ArgumentNullException(nameof(element));
@@ -126,7 +130,11 @@ namespace Grammophone.GenericContentModel
 			return base.AddItem(element);
 		}
 
-		// Only allow non-null elements to be removed.
+		/// <summary>
+		/// Called when an item is removed from the collection. Only allow non-null elements to be removed.
+		/// </summary>
+		/// <param name="element">The element to be removed.</param>
+		/// <returns>Returns true if the lement was found and removed.</returns>
 		protected internal override bool RemoveItem(T element)
 		{
 			if (element == null) throw new ArgumentNullException(nameof(element));

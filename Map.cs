@@ -39,11 +39,20 @@ namespace Grammophone.GenericContentModel
 
 		#region IMap<K,E> Members
 
+		/// <summary>
+		/// Add a item to the collection.
+		/// </summary>
+		/// <param name="item">The item to add.</param>
+		/// <returns>Returns whether the item already exists in the collection.</returns>
 		public bool Add(E item)
 		{
 			return AddItem(item);
 		}
 
+		/// <summary>
+		/// Add a collection of items in te collection.
+		/// </summary>
+		/// <param name="items">The items to add.</param>
 		public void AddAll(IEnumerable<E> items)
 		{
 			if (items == null) throw new ArgumentNullException("items");
@@ -54,6 +63,11 @@ namespace Grammophone.GenericContentModel
 			}
 		}
 
+		/// <summary>
+		/// Remove an item.
+		/// </summary>
+		/// <param name="item">The item to remove.</param>
+		/// <returns>Returns true if the item was a member of the collection and removed, else false.</returns>
 		public bool Remove(E item)
 		{
 			if (item == null) throw new ArgumentNullException("item");
@@ -61,11 +75,19 @@ namespace Grammophone.GenericContentModel
 			return dictionary.Remove(item.Key);
 		}
 
+		/// <summary>
+		/// Remove an item by key.
+		/// </summary>
+		/// <param name="key">The key of the item.</param>
+		/// <returns>Returns if the item was found and removed, else false.</returns>
 		public bool RemoveKey(K key)
 		{
 			return dictionary.Remove(key);
 		}
 
+		/// <summary>
+		/// Clear all items in this collection.
+		/// </summary>
 		public void Clear()
 		{
 			dictionary.Clear();
