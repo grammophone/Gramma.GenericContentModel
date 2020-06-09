@@ -2,7 +2,7 @@
   <PropertyGroup>
     <ProductVersion>8.0.30703</ProductVersion>
     <ProjectGuid>{79D2D4C7-C8DE-4F11-93ED-AA4E4D2FC974}</ProjectGuid>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyTitle>Grammophone.GenericContentModel</AssemblyTitle>
     <Product>Grammophone.GenericContentModel</Product>
     <Copyright>Copyright ©  2013</Copyright>
